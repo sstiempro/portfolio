@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Case Study — Rebuilding Adisa Communications · Thomas Tyler Hill</title>
+<meta name="description" content="How I rebuilt a client's 30-year legacy WordPress site into a hardened, instant React 19 / Vite static app on Cloudflare's edge — solo, end to end. By Thomas Tyler Hill." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23071111'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23F5BA77' text-anchor='middle' font-weight='bold'%3ET%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#071111; --panel:#0d1a1a; --panel-hi:#0f1f1f; --line:#1f3636;
+    --text:#FAF7F1; --muted:#9fb6b6; --faint:#6f8c8c;
+    --copper:#BC7740; --amber:#F5BA77; --sky:#8AC3DF; --navy:#34436B;
+    --grad:linear-gradient(120deg,#BC7740,#F5BA77); --max:860px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Cormorant Garamond","Georgia",serif;letter-spacing:-.01em;line-height:1.12}
+  a{color:var(--sky);text-decoration:none}a:hover{text-decoration:underline}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .bg-fx{position:fixed;inset:0;z-index:-1;background:
+    radial-gradient(800px 500px at 85% -5%,rgba(188,119,64,.13),transparent 60%),
+    radial-gradient(700px 500px at 0% 5%,rgba(138,195,223,.07),transparent 55%)}
+  header.top{padding:64px 0 30px}
+  .back{color:var(--muted);font-size:14px;font-weight:500}
+  .eyebrow{color:var(--amber);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin:26px 0 10px}
+  h1{font-size:clamp(38px,6.4vw,60px);margin:0 0 14px;font-weight:700}
+  .deck{color:var(--muted);font-size:19px;max-width:680px}
+  .meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .meta div{font-size:14px}.meta span{display:block;color:var(--faint);font-size:12px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px}
+  .meta b{font-family:"Inter",sans-serif;font-weight:600;color:var(--text)}
+  section{padding:40px 0}
+  h2{font-size:clamp(26px,4.4vw,36px);margin:0 0 8px;font-weight:700}
+  h2 .n{color:var(--copper);font-size:.55em;font-family:"JetBrains Mono",monospace;margin-right:12px}
+  p{color:#d8e3e3;font-size:16.5px}
+  .lead{color:var(--muted)}
+  ul{color:#d8e3e3;font-size:16px;padding-left:22px}li{margin:8px 0}
+  li b{color:var(--amber)}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px}
+  th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--sky);font-size:13px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  td:first-child{color:var(--faint);width:26%}
+  td.new{color:#fff;font-weight:500}
+  .pull{border-left:3px solid;border-image:var(--grad) 1;background:var(--panel);padding:22px 26px;border-radius:0 12px 12px 0;
+    font-family:"Cormorant Garamond",serif;font-size:24px;color:#fff;margin:24px 0;font-weight:500}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .box h3{margin:0 0 8px;font-size:19px;font-weight:600}.box p{margin:0;font-size:14.5px;color:var(--muted)}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .cta{margin:50px 0 80px;text-align:center;border:1px solid var(--line);border-radius:20px;padding:48px 24px;
+    background:radial-gradient(600px 240px at 50% -20%,rgba(245,186,119,.10),transparent 70%),var(--panel)}
+  .btn{display:inline-block;margin:6px;padding:12px 24px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--text)}
+  .btn.p{background:var(--grad);color:#1a0f06;border-color:transparent}
+  footer{padding:30px 0 60px;border-top:1px solid var(--line);color:var(--faint);font-size:13px;text-align:center;font-family:"JetBrains Mono",monospace}
+</style>
+</head>
+<body>
+<div class="bg-fx"></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="back" href="../index.html">← Back to portfolio</a>
+    <div class="eyebrow">Case Study · Client Site Rebuild</div>
+    <h1>I rebuilt a 30-year firm's entire <span class="grad-text">web presence</span></h1>
+    <p class="deck">A client engagement: I migrated Adisa Communications — a strategic communications firm with three decades of legacy — from a slow, vulnerable WordPress site to a hardened, instant static web app on Cloudflare's edge. Solo, end to end.</p>
+    <div class="meta">
+      <div><span>My role</span><b>Solo — architect, build, deploy</b></div>
+      <div><span>Client</span><b>Adisa Communications</b></div>
+      <div><span>Stack</span><b>React 19 · Vite · Tailwind · Cloudflare</b></div>
+      <div><span>Live</span><b><a href="https://adisa.sstiem.com" target="_blank" rel="noopener">adisa.sstiem.com ↗</a></b></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <h2><span class="n">01</span>The brief</h2>
+    <p>My client's website carried 30 years of legacy — and 30 years of technical debt. It ran on a traditional database-driven WordPress stack: prone to security vulnerabilities, slow page reloads, and plugin bloat. They needed to look like a firm that handles serious contracts; the aging site quietly undercut that on every visit.</p>
+    <p class="lead">My mandate wasn't a visual refresh. It was to rebuild the foundation underneath — preserving three decades of their content and SEO equity while replacing the engine entirely.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span>How I approached it — "scrape &amp; rebuild"</h2>
+    <ul>
+      <li><b>Deep content extraction.</b> I algorithmically scraped the existing site, preserving 30 years of photos and articles — and kept the original link structure so none of their SEO value was lost.</li>
+      <li><b>Structured data migration.</b> I converted all their posts and insights from a slow database into a clean, immutable data structure — so the new site performs <b>zero database lookups</b> and loads instantly.</li>
+      <li><b>Component architecture.</b> I rebuilt the entire interface in React 19 as modular, reusable components — navigation to footer.</li>
+    </ul>
+
+    <table>
+      <tr><th>Dimension</th><th>What they had</th><th>What I shipped</th></tr>
+      <tr><td>Architecture</td><td>Server-side (PHP/SQL)</td><td class="new">Static SPA (React / Vite)</td></tr>
+      <tr><td>Hosting</td><td>Traditional server</td><td class="new">Cloudflare global edge</td></tr>
+      <tr><td>Security</td><td>SQL injection &amp; plugin exposure</td><td class="new">No database/server to attack</td></tr>
+      <tr><td>Navigation</td><td>Full page reloads</td><td class="new">Instant, app-like transitions</td></tr>
+      <tr><td>Maintenance</td><td>Constant plugin/DB upkeep</td><td class="new">Effectively zero</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span>What I engineered</h2>
+    <div class="grid2">
+      <div class="box"><h3>🛡️ Hardened security</h3><p>By removing the database and PHP layer I eliminated ~99% of common web vulnerabilities (SQL injection, XSS, DDoS saturation). I deploy it as a read-only, immutable artifact over strict HTTPS/TLS — there's nothing to deface.</p></div>
+      <div class="box"><h3>🚀 Performance</h3><p>I built it as a single-page app with aggressive asset preloading and intelligent caching, so critical images and a persistent background video are ready before the user sees the page.</p></div>
+      <div class="box"><h3>✨ Premium UX</h3><p>I used Framer Motion for fluid, scroll-triggered reveals, and engineered a global background video that plays continuously across navigation — an effect traditional sites can't achieve.</p></div>
+      <div class="box"><h3>🔍 SEO &amp; accessibility</h3><p>Semantic HTML5, Open Graph rich-preview cards, and accessible labels/alt text throughout — built into the structure, not bolted on after.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span>The outcome</h2>
+    <div class="pull">The brief wasn't a new coat of paint — it was a new foundation. So I rebuilt the foundation.</div>
+    <ul>
+      <li><b>Maintenance-free.</b> No plugins to update, no database to crash — it runs the same in five years as it does today.</li>
+      <li><b>Global reliability.</b> Replicated across Cloudflare's edge — instant whether a visitor loads from Austin or Tokyo.</li>
+      <li><b>Hardened.</b> The whole class of database/server attacks simply doesn't apply anymore.</li>
+      <li><b>Near-zero cost.</b> Static edge hosting drops infrastructure cost toward zero while scaling to handle massive traffic.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span>Why it's representative of how I work</h2>
+    <p>This is one client, but it's the pattern across everything I build: I take a real, messy problem and own it end to end — extraction, architecture, security, performance, deployment — and I make decisions a non-technical client can trust. One person, the whole stack, shipped and live.</p>
+  </section>
+
+  <div class="cta">
+    <h2>One person. End to end.</h2>
+    <p class="lead" style="max-width:520px;margin:8px auto 20px">This is how I work across every project — and I'm looking for a team to do it with.</p>
+    <a class="btn p" href="mailto:thomas@sstiem.com">thomas@sstiem.com</a>
+    <a class="btn" href="../index.html">See more work</a>
+  </div>
+
+</div>
+
+<footer>© <span id="yr"></span> Thomas Tyler Hill · portfolio.sstiem.com</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

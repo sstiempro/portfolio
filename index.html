@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thomas Tyler Hill — Founder &amp; AI Engineer</title>
+<meta name="description" content="Thomas Tyler Hill — Founder & AI Engineer. I build AI-orchestrated systems end to end: agent infrastructure, quantitative research, and full-stack platforms. Self-taught. Proof of work over pedigree." />
+<meta property="og:title" content="Thomas Tyler Hill — Founder & AI Engineer" />
+<meta property="og:description" content="I build AI-orchestrated systems end to end. Self-taught. Proof of work over pedigree." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23071111'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23F5BA77' text-anchor='middle' font-weight='bold'%3ET%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* SSTIEM official brand */
+    --bg:#071111; --bg2:#0a1616; --panel:#0d1a1a; --panel-hi:#0f1f1f; --line:#1f3636;
+    --text:#FAF7F1; --muted:#9fb6b6; --faint:#6f8c8c;
+    --copper:#BC7740; --amber:#F5BA77; --sky:#8AC3DF; --navy:#34436B;
+    --a1:#F5BA77; /* amber — accent text */ --a2:#8AC3DF; /* sky — links */
+    --grad:linear-gradient(120deg,#BC7740,#F5BA77);
+    --radius:16px; --max:1140px; --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.disp{font-family:"Cormorant Garamond","Georgia",serif;letter-spacing:-.01em}
+  a{color:var(--a2);text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+  .bg-fx{position:fixed;inset:0;z-index:-2;overflow:hidden;background:
+     radial-gradient(900px 600px at 80% -5%,rgba(188,119,64,.13),transparent 60%),
+     radial-gradient(800px 600px at 0% 10%,rgba(138,195,223,.08),transparent 55%);}
+  .orb{position:absolute;border-radius:50%;filter:blur(95px);opacity:.5;animation:drift 22s var(--ease) infinite alternate}
+  .orb.a{width:520px;height:520px;background:#34436B;top:-120px;left:-80px}
+  .orb.b{width:460px;height:460px;background:#BC7740;top:20%;right:-120px;animation-duration:28s}
+  .orb.c{width:420px;height:420px;background:#155a5a;bottom:-160px;left:30%;animation-duration:25s}
+  @keyframes drift{to{transform:translate3d(60px,40px,0) scale(1.12)}}
+  .grid-ovl{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.3;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%)}
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+    background:rgba(7,17,17,.6);border-bottom:1px solid transparent;transition:border-color .3s}
+  nav.scrolled{border-color:var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:22px;letter-spacing:.01em}
+  .brand .dot{color:var(--copper)}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{color:var(--muted);font-size:14.5px;font-weight:500;transition:color .2s;font-family:"Inter",sans-serif}
+  .nav-links a:hover{color:var(--text)}
+  .pill{padding:9px 17px;border-radius:999px;background:var(--grad);color:#1a0f06 !important;font-weight:600}
+  .pill:hover{filter:brightness(1.07)}
+  @media(max-width:680px){.nav-links a:not(.pill){display:none}}
+  .hero{padding:120px 0 90px;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--amber);font-size:12.5px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);font-family:"Inter",sans-serif;
+    padding:6px 14px;border-radius:999px;background:rgba(245,186,119,.06)}
+  .eyebrow .live{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(245,186,119,.6);animation:pulse 2.2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(245,186,119,0)}100%{box-shadow:0 0 0 0 rgba(245,186,119,0)}}
+  h1{font-size:clamp(52px,9vw,98px);line-height:.96;margin:22px 0 8px;font-weight:700}
+  .role-line{font-size:clamp(19px,2.8vw,27px);color:var(--text);font-weight:500;margin:0 0 20px;font-family:"Inter",sans-serif}
+  .role-line b{font-weight:600;color:var(--amber)}
+  .sub{color:var(--muted);max-width:660px;font-size:17.5px;margin:0;font-family:"Inter",sans-serif}
+  .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:15px;
+    border:1px solid var(--line);color:var(--text);transition:.2s var(--ease);font-family:"Inter",sans-serif}
+  .btn.primary{background:var(--grad);color:#1a0f06;border-color:transparent}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost:hover{border-color:var(--copper);color:#fff}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+  .stat{padding:22px;border:1px solid var(--line);border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--panel-hi),var(--panel))}
+  .stat b{display:block;font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:700;line-height:1}
+  .stat span{color:var(--faint);font-size:13px;font-family:"Inter",sans-serif;display:block;margin-top:6px}
+  @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}.hero{padding:80px 0 60px}}
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:15px 0;overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .marquee .track{display:inline-block;animation:scroll 32s linear infinite}
+  .marquee span{color:var(--muted);font-size:15px;font-weight:500;margin:0 26px;font-family:"Inter",sans-serif}
+  .marquee span::before{content:"◆";color:var(--copper);margin-right:26px;font-size:9px;vertical-align:middle}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  section{padding:90px 0}
+  .shead{margin-bottom:42px;max-width:700px}
+  .shead .tag{color:var(--amber);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-family:"Inter",sans-serif}
+  h2{font-size:clamp(32px,4.8vw,48px);margin:10px 0 12px;font-weight:700}
+  .shead p{color:var(--muted);margin:0;font-size:17px;font-family:"Inter",sans-serif}
+  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .pcard{position:relative;display:flex;flex-direction:column;padding:28px;border:1px solid var(--line);
+    border-radius:var(--radius);background:linear-gradient(180deg,var(--panel-hi),var(--panel));
+    overflow:hidden;transition:.3s var(--ease)}
+  .pcard::after{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;
+    background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
+  .pcard:hover{transform:translateY(-5px)}
+  .pcard:hover::after{opacity:1}
+  .pcard.feat{grid-column:1/-1}
+  .pcat{color:var(--amber);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:"Inter",sans-serif}
+  .pcard h3{font-size:26px;margin:8px 0 0;font-weight:600}
+  .pcard p{color:var(--muted);font-size:15px;margin:12px 0 18px;flex:1;font-family:"Inter",sans-serif}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .t{font-size:12px;color:var(--text);background:#0b1818;border:1px solid var(--line);padding:5px 11px;border-radius:999px;font-family:"Inter",sans-serif}
+  .live-link{color:var(--amber);font-weight:600;font-size:14.5px;margin-top:16px;display:inline-block;font-family:"Inter",sans-serif}
+  .live-link:hover{text-decoration:underline}
+  @media(max-width:760px){.pgrid{grid-template-columns:1fr}}
+  .about{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start}
+  .about p{color:var(--muted);font-size:16.5px;font-family:"Inter",sans-serif}
+  .about p b{color:var(--text)}
+  .quote{margin-top:22px;padding:22px 24px;border-left:3px solid;border-image:var(--grad) 1;
+    background:var(--panel);border-radius:0 12px 12px 0;color:var(--text);font-size:20px;font-family:"Cormorant Garamond",serif;font-weight:500}
+  .hl{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:24px}
+  .hl h4{margin:0 0 16px;font-size:13px;color:var(--sky);letter-spacing:.08em;text-transform:uppercase;font-family:"Inter",sans-serif}
+  .hl ul{list-style:none;margin:0;padding:0}
+  .hl li{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:15px;align-items:baseline;font-family:"Inter",sans-serif}
+  .hl li:last-child{border-bottom:0}
+  .hl li b{color:var(--amber);font-family:"Cormorant Garamond",serif;font-size:21px;min-width:84px}
+  @media(max-width:760px){.about{grid-template-columns:1fr}}
+  .scols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .scol{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:24px}
+  .scol h4{margin:0 0 14px;color:var(--sky);font-size:16px;font-weight:600}
+  .scol ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px;font-family:"Inter",sans-serif}
+  .scol li{margin:6px 0}
+  @media(max-width:760px){.scols{grid-template-columns:1fr}}
+  .cta-big{text-align:center;border:1px solid var(--line);border-radius:24px;padding:64px 28px;
+    background:radial-gradient(700px 300px at 50% -20%,rgba(245,186,119,.10),transparent 70%),var(--panel)}
+  .cta-big h2{margin:0 0 10px}
+  .cta-big p{color:var(--muted);max-width:560px;margin:0 auto 26px;font-size:17px;font-family:"Inter",sans-serif}
+  .email-link{font-family:"Cormorant Garamond",serif;font-size:clamp(26px,4.2vw,40px);font-weight:600}
+  footer{padding:40px 0 60px;border-top:1px solid var(--line);margin-top:90px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--faint);font-size:13.5px;font-family:"Inter",sans-serif}
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .orb,.marquee .track,.eyebrow .live{animation:none}
+    .rv{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<div class="bg-fx"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+<div class="grid-ovl"></div>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <div class="brand">Thomas Tyler Hill<span class="dot">.</span></div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a class="pill" href="mailto:thomas@sstiem.com">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow rv"><span class="live"></span> Founder &amp; AI Engineer · open to work</span>
+    <h1 class="rv">Thomas Tyler <span class="grad-text">Hill</span></h1>
+    <p class="role-line rv">I build <b>AI-orchestrated systems</b> end to end — agent infrastructure, quantitative research, and full-stack platforms.</p>
+    <p class="sub rv">Self-taught over three years of building every day. I ship complete systems solo, and I design them to be honest — to catch their own mistakes instead of telling a pretty lie. <b style="color:var(--text)">Proof of work over pedigree.</b></p>
+    <div class="cta rv">
+      <a class="btn primary" href="#work">View the work →</a>
+      <a class="btn ghost" href="mailto:thomas@sstiem.com">thomas@sstiem.com</a>
+    </div>
+    <div class="stats">
+      <div class="stat rv"><b class="grad-text">3+ yrs</b><span>building production systems daily</span></div>
+      <div class="stat rv"><b class="grad-text">41</b><span>microservices, one solo platform</span></div>
+      <div class="stat rv"><b class="grad-text">~100k</b><span>lines of TypeScript shipped</span></div>
+      <div class="stat rv"><b class="grad-text">27M+</b><span>rows in a live data pipeline</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>TypeScript</span><span>AI Agents</span><span>Next.js</span><span>Distributed Systems</span><span>Prompt Engineering</span><span>PostgreSQL</span><span>Redis</span><span>Quant Research</span><span>WebGL</span><span>Python</span><span>Docker</span><span>Automation</span>
+    <span>TypeScript</span><span>AI Agents</span><span>Next.js</span><span>Distributed Systems</span><span>Prompt Engineering</span><span>PostgreSQL</span><span>Redis</span><span>Quant Research</span><span>WebGL</span><span>Python</span><span>Docker</span><span>Automation</span>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="tag">Selected Work</div>
+      <h2>Systems I designed, built, and run</h2>
+      <p>A portfolio of production platforms built solo under my company, SSTIEM. Details sanitized — proprietary logic and credentials omitted.</p>
+    </div>
+    <div class="pgrid">
+
+      <article class="pcard feat rv">
+        <div class="pcat">Distributed Systems · Quantitative Research · Flagship</div>
+        <h3>TRADEZYX / OmniOne</h3>
+        <p>A 41-microservice market-analytics and systematic-trading research platform. It ingests free public data, discovers strategies, and validates them with research-grade statistics — walk-forward testing, Deflated Sharpe, phase-randomization null tests, block-bootstrap Monte Carlo. Engineered to <em>reject</em> overfit ideas rather than flatter them. ~100k lines of TypeScript, a 27M-row Postgres store, a Redis bus, 56 containers, live 24/7. Paper-only.</p>
+        <div class="tags"><span class="t">TypeScript</span><span class="t">PostgreSQL</span><span class="t">Redis</span><span class="t">Docker</span><span class="t">Next.js</span><span class="t">Quant</span></div>
+        <a class="live-link" href="https://omnione.sstiem.com" target="_blank" rel="noopener">View live ↗</a>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Applied AI · Agent Infrastructure</div>
+        <h3>Agent OS (Hermes)</h3>
+        <p>An operating system for AI agents: a command center with runtime surfaces, provider lanes, an agent mesh, reusable skills, and an explicit approval &amp; governance layer so autonomous agents act under auditable rules.</p>
+        <div class="tags"><span class="t">Next.js</span><span class="t">TypeScript</span><span class="t">AI Agents</span><span class="t">Orchestration</span></div>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Applied AI · SaaS · Live</div>
+        <h3>LeadEngine</h3>
+        <p>An autonomous lead-intelligence platform — discovery layer, web crawling, lead scoring, B2B outbound signals, and a CRM funnel. Agents working in production to turn public data into qualified pipeline.</p>
+        <div class="tags"><span class="t">Node.js</span><span class="t">Data Pipelines</span><span class="t">Web Scraping</span><span class="t">AI Agents</span></div>
+        <a class="live-link" href="https://leaderboard.sstiem.com" target="_blank" rel="noopener">View live ↗</a>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Systems · Product</div>
+        <h3>Mesh</h3>
+        <p>A keyless, no-custody platform that turns idle machines into a monitored compute mesh on public data — with a thermal auto-protect governor that throttles before hardware is damaged, and honest accounting that flags "free money" mirages.</p>
+        <div class="tags"><span class="t">Node.js</span><span class="t">Telemetry</span><span class="t">Dashboards</span><span class="t">Open Design</span></div>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Founder · Full-Stack &amp; Creative · Live</div>
+        <h3>SSTIEM</h3>
+        <p>My company: an AI business-operating-system and studio. Immersive WebGL / Three.js sites, CRM and admin dashboards, client portals, and a modular "business OS" — delivered across multiple client verticals.</p>
+        <div class="tags"><span class="t">React</span><span class="t">WebGL / Three.js</span><span class="t">CRM</span><span class="t">Dashboards</span></div>
+        <a class="live-link" href="https://www.sstiem.com" target="_blank" rel="noopener">View live ↗</a>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Prompt &amp; Agentic Design</div>
+        <h3>MoltBot / OpenClaw</h3>
+        <p>Autonomous-agent frameworks powering the systems above — swarm execution, agent roles and skills, execution controllers, and approval gates. The connective tissue that lets one person operate like a team.</p>
+        <div class="tags"><span class="t">AI Agents</span><span class="t">Prompt Engineering</span><span class="t">Automation</span></div>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Generative AI · Design → Manufacturing</div>
+        <h3>JewelryOS</h3>
+        <p>A generative pipeline that turns trends and reference imagery into manufacturable jewelry: trend-scraping → prompt-based AI design → CAD modeling → downloadable STL files ready for production. Design intelligence wired straight to fabrication.</p>
+        <div class="tags"><span class="t">Generative AI</span><span class="t">CAD</span><span class="t">Pipelines</span><span class="t">Computer Vision</span></div>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Systems · Storage Intelligence</div>
+        <h3>Ace Pro</h3>
+        <p>A storage-intelligence utility that scans local, external, and cloud drives at once — deduplication, semantic file analysis, and high-efficiency organization, with telemetry across every device.</p>
+        <div class="tags"><span class="t">Node.js</span><span class="t">Telemetry</span><span class="t">Semantic Search</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="tag">Client Work · Live</div>
+      <h2>Shipped for real clients — and you can click them</h2>
+      <p>Production sites and platforms I designed, built, and deployed end to end for clients, on Cloudflare's edge. Every link below is live.</p>
+    </div>
+    <div class="pgrid">
+
+      <article class="pcard feat rv">
+        <div class="pcat">Full Site Rebuild · Featured Case Study</div>
+        <h3>Rebuilding a 30-year firm <span style="color:var(--faint);font-weight:500;font-size:.7em">— client: Adisa Communications</span></h3>
+        <p>I rebuilt a strategic-communications firm's 30-year legacy WordPress site into a modern React 19 / Vite single-page app on Cloudflare's global edge. My "scrape &amp; rebuild" migration preserved three decades of their content and SEO link structure while converting the database to immutable data (zero DB lookups → instant loads). Removing the server and database eliminated ~99% of common attack surface (SQL injection, XSS, plugin exploits); I added Framer Motion and a persistent background-video engine for a premium, app-like feel. Outcome: a faster, maintenance-free, near-zero-cost platform — architected, built, and deployed end to end by me.</p>
+        <div class="tags"><span class="t">React 19</span><span class="t">Vite</span><span class="t">Cloudflare Edge</span><span class="t">Framer Motion</span><span class="t">SEO</span><span class="t">Security</span></div>
+        <div style="display:flex;gap:18px;margin-top:18px;flex-wrap:wrap">
+          <a class="live-link" style="margin-top:0;color:var(--sky)" href="case-studies/adisa.html">Read the full case study →</a>
+          <a class="live-link" style="margin-top:0" href="https://adisa.sstiem.com" target="_blank" rel="noopener">View live ↗</a>
+        </div>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Blockchain · Web3 · XRPL</div>
+        <h3>ROOT Protocol</h3>
+        <p>An on-chain platform for authenticated creator assets on the XRP Ledger — a full Web3 build that verifies and manages creator works on-chain, wrapped in a polished, performant application interface.</p>
+        <div class="tags"><span class="t">XRPL</span><span class="t">Web3</span><span class="t">Blockchain</span><span class="t">React</span></div>
+        <a class="live-link" href="https://atracoin.sstiem.com" target="_blank" rel="noopener">View live ↗</a>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Full-Stack Service Platform</div>
+        <h3>HillSide Cleaning</h3>
+        <p>A premium marketing site fronting a complete service platform — administrative dashboard, customer portals, scheduling, CRM, secure authentication, and payment handling, all in one full-stack environment.</p>
+        <div class="tags"><span class="t">Full-Stack</span><span class="t">Payments</span><span class="t">Scheduling</span><span class="t">CRM</span></div>
+        <a class="live-link" href="https://hillsidecleaning.sstiem.com" target="_blank" rel="noopener">View live ↗</a>
+      </article>
+
+      <article class="pcard rv">
+        <div class="pcat">Interactive Application</div>
+        <h3>Oracle Tarot</h3>
+        <p>An immersive interactive app and reading system across desktop, mobile, and browser — interconnected pages and engines, persistent data that adapts to each user, plus analytics and secure payments.</p>
+        <div class="tags"><span class="t">Interactive</span><span class="t">Persistent State</span><span class="t">Payments</span></div>
+        <a class="live-link" href="https://tarot.sstiem.com" target="_blank" rel="noopener">View live ↗</a>
+      </article>
+
+    </div>
+    <p style="color:var(--faint);font-size:14.5px;margin-top:22px;font-family:'Inter',sans-serif">Also built: full-stack service platforms (World of Doors, Silk Route), a Jewelry OS design-to-CAD-to-STL pipeline, and Ace Pro storage intelligence — walkthroughs available on request.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="tag">About</div>
+      <h2>Builder first. Honest by design.</h2>
+    </div>
+    <div class="about">
+      <div class="rv">
+        <p>I design, build, deploy, and operate AI and data systems alone — architecture through ops. I direct AI tooling to build at a scale that usually takes a team, and I came up running my own businesses and in technical sales, so I can build the thing <b>and</b> talk to the person who needs it.</p>
+        <p>My edge isn't a diploma. It's two things most people don't have together: <b>I ship complete systems by myself</b>, and <b>I'd rather kill a bad idea with an honest test than ship something that only looks good.</b> Every system I build is designed to catch its own mistakes.</p>
+        <div class="quote">I'm looking for a team where demonstrated ability beats credentials — to do what I already do for love, and get paid for it.</div>
+      </div>
+      <div class="hl rv">
+        <h4>By the numbers</h4>
+        <ul>
+          <li><b>1,600+</b><span>documented build sessions over 3 years</span></li>
+          <li><b>20+</b><span>live products &amp; client sites shipped</span></li>
+          <li><b>41</b><span>microservices in one platform, solo</span></li>
+          <li><b>E2E</b><span>architecture · data · backend · frontend · ops</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="tag">Capabilities</div>
+      <h2>Generalist range, real depth</h2>
+      <p>I tailor the lead project to the role — quant, agents, full-stack, or product.</p>
+    </div>
+    <div class="scols">
+      <div class="scol rv"><h4>Engineering</h4><ul>
+        <li>TypeScript · Node.js · Python</li>
+        <li>Distributed systems &amp; microservices</li>
+        <li>PostgreSQL · Redis · data pipelines</li>
+        <li>Docker · Linux / VPS ops</li>
+        <li>Next.js · React · WebGL / Three.js</li>
+      </ul></div>
+      <div class="scol rv"><h4>Applied AI</h4><ul>
+        <li>LLM applications · RAG · embeddings</li>
+        <li>AI agents &amp; multi-agent orchestration</li>
+        <li>Multimodal: voice (Whisper/TTS), image gen</li>
+        <li>Prompt engineering · fine-tuning</li>
+        <li>AI-assisted development at scale</li>
+      </ul></div>
+      <div class="scol rv"><h4>Research &amp; Product</h4><ul>
+        <li>Quantitative research &amp; backtesting</li>
+        <li>Statistical validation / null-testing</li>
+        <li>System architecture</li>
+        <li>Dashboards &amp; data viz</li>
+        <li>Technical sales &amp; client delivery</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-big rv">
+      <h2>Let's build something</h2>
+      <p>Open to AI engineering, forward-deployed / solutions, and quant roles — remote or relocation.</p>
+      <a class="email-link grad-text" href="mailto:thomas@sstiem.com">thomas@sstiem.com</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div>© <span id="yr"></span> Thomas Tyler Hill · Austin, TX</div>
+  <div class="mono">portfolio.sstiem.com</div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>10)},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(Math.min(i,6)*60)+'ms';io.observe(el)});
+</script>
+</body>
+</html>
