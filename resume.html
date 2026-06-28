@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thomas Tyler Hill — Résumé</title>
+<meta name="description" content="Résumé — Thomas Tyler Hill, Founder & AI Engineer." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#071111;--panel:#0d1a1a;--line:#1f3636;--text:#FAF7F1;--muted:#9fb6b6;--faint:#6f8c8c;--copper:#BC7740;--amber:#F5BA77;--sky:#8AC3DF}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#05100f;color:var(--text);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;padding:28px 16px}
+  .sheet{max-width:850px;margin:0 auto;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:40px 46px}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif}
+  h1{font-size:38px;font-weight:700;line-height:1}
+  .role{color:var(--amber);font-weight:600;font-size:15px;letter-spacing:.04em;margin-top:5px}
+  .contact{color:var(--muted);font-size:13px;margin-top:10px;line-height:1.7}
+  .contact a{color:var(--sky);text-decoration:none}
+  .toolbar{max-width:850px;margin:0 auto 14px;display:flex;justify-content:flex-end;gap:10px}
+  .btn{font-family:"Inter",sans-serif;font-size:13px;font-weight:600;color:#1a0f06;background:linear-gradient(120deg,#BC7740,#F5BA77);border:none;border-radius:999px;padding:9px 18px;cursor:pointer;text-decoration:none}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--amber)}
+  h2{font-size:18px;color:var(--amber);border-bottom:1px solid var(--line);padding-bottom:5px;margin:24px 0 12px;font-weight:600;letter-spacing:.02em}
+  p,li{font-size:13.5px;color:var(--muted)}
+  .sum{color:#c9d6d4;font-size:14px}
+  .skills b,.exp b,.proj b{color:var(--text)}
+  .skills p{margin:5px 0}
+  .proj{margin-bottom:14px}
+  .proj h3{font-size:16px;color:var(--text);font-weight:600}
+  .proj .meta{color:var(--faint);font-size:12px;font-style:italic;margin:1px 0 5px}
+  ul{list-style:none;margin:4px 0}
+  li{padding-left:15px;position:relative;margin-bottom:4px}
+  li::before{content:"▹";position:absolute;left:0;color:var(--copper)}
+  .exp .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-top:10px}
+  .exp .row b{font-size:14.5px}
+  .exp .yr{color:var(--faint);font-size:12px;white-space:nowrap}
+  @media print{
+    @page{size:letter;margin:0.5in}
+    body{background:#fff;color:#111;padding:0}
+    .sheet{border:none;border-radius:0;max-width:none;padding:0;background:#fff}
+    .toolbar{display:none}
+    h1{color:#0c1414}.role{color:#8a4f25}.contact{color:#444}.contact a{color:#8a4f25}
+    h2{color:#8a4f25;border-color:#ccc}p,li{color:#333}.sum{color:#222}
+    .proj h3,.skills b,.exp b,.proj b,.exp .row b{color:#0c1414}
+    li::before{color:#b06a36}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a class="btn ghost" href="index.html">← Portfolio</a>
+  <button class="btn" onclick="window.print()">Download PDF / Print</button>
+</div>
+<div class="sheet">
+  <h1>Thomas Tyler Hill</h1>
+  <div class="role">Founder &amp; AI Engineer — AI-orchestrated systems · agent infrastructure · quant research · full-stack</div>
+  <div class="contact">
+    📍 Austin, TX — open to remote or relocation · ✉️ <a href="mailto:thomas@sstiem.com">thomas@sstiem.com</a><br>
+    🔗 <a href="https://portfolio.sstiem.com">portfolio.sstiem.com</a> ·
+    <a href="https://linkedin.com/in/tyler-hill-ai">linkedin.com/in/tyler-hill-ai</a> ·
+    <a href="https://github.com/sstiempro">github.com/sstiempro</a>
+  </div>
+
+  <h2>Summary</h2>
+  <p class="sum">Founder-operator and engineer who designs, builds, ships, and operates AI-orchestrated systems end to end — across quantitative research, AI-agent infrastructure, dashboards, and automation — under my own company (SSTIEM). Flagship: a 41-microservice, ~100k-line market-analytics and systematic-trading research platform (TypeScript, Postgres 27M+ rows, Redis, Docker, live 24/7). Signature approach: keyless, no-custody, honest systems that pair fast full-stack shipping with research-grade validation (walk-forward, Deflated Sharpe, phase-randomization null tests) — so what ships is real, not overfit.</p>
+
+  <h2>Core Skills</h2>
+  <div class="skills">
+    <p><b>Languages:</b> TypeScript (expert), JavaScript/Node, SQL, Python</p>
+    <p><b>Backend &amp; Systems:</b> Microservice architecture, REST APIs, Express, event-driven pipelines, WebSocket ingestion, distributed system design</p>
+    <p><b>Data:</b> PostgreSQL (27M-row time-series), Redis (hot bus / pub-sub / cache), schema design, ETL/backfill</p>
+    <p><b>Infra / DevOps:</b> Docker &amp; Compose (56 containers), Linux/VPS ops, rsync deploy pipelines, Cloudflare (Workers/Pages), health-check &amp; restart automation</p>
+    <p><b>Frontend:</b> Next.js / React (TSX), Tailwind, WebGL / Three.js, Framer Motion, dashboards &amp; data viz</p>
+    <p><b>AI / Agentic:</b> LLM apps, multi-agent orchestration &amp; agent infrastructure, prompt engineering, RAG + embeddings; multimodal — Whisper (STT), TTS/voice agents, Stable Diffusion / ComfyUI; fine-tuning; local models (Ollama)</p>
+    <p><b>Quant / Research:</b> Backtesting &amp; walk-forward, Monte Carlo (block-bootstrap), Sharpe/Sortino/Deflated-Sharpe, max-drawdown, Kelly, VaR, correlation, regime detection, signal processing (Hilbert/Ehlers, spectral/harmonic, Hawkes)</p>
+    <p><b>Crypto / Web3:</b> systematic trading &amp; exchange APIs (Binance/Bybit/Kraken), XRP Ledger, smart contracts (Solidity)</p>
+  </div>
+
+  <h2>Flagship Project</h2>
+  <div class="proj">
+    <h3>TRADEZYX / OmniOne — Quant Market-Analytics &amp; Systematic-Trading Platform</h3>
+    <div class="meta">Solo architect, engineer &amp; operator · TypeScript, Postgres, Redis, Docker, Next.js · paper-only</div>
+    <ul>
+      <li>Architected and operate <b>41 microservices</b> (~<b>100k LOC TypeScript</b>) across <b>56 Docker containers</b>, deployed 24/7 with an automated rsync + rebuild pipeline, health-check/restart loops, and resource governance.</li>
+      <li>Built a <b>27M-row PostgreSQL</b> time-series store + a <b>Redis hot-data bus</b>, with keyless ingestion from public exchange WebSocket/REST feeds.</li>
+      <li>Designed a <b>backtest + walk-forward harness</b> with honest fees/slippage, regime tagging, and a champion/challenger promotion gate — strategies ship only after surviving out-of-sample validation.</li>
+      <li>Implemented <b>research-grade validation</b>: Deflated Sharpe, phase-randomization null tests, block-bootstrap Monte Carlo — used to <em>reject</em> the majority of candidate edges as overfit.</li>
+    </ul>
+  </div>
+
+  <h2>Other Selected Projects</h2>
+  <div class="proj"><h3>SSTIEM Agent OS (Hermes)</h3><div class="meta">AI-agent operating system · Next.js, agent runtime</div>
+    <ul><li>Command-room control, provider lanes, an agent mesh, reusable skills, and an explicit <b>approval &amp; governance layer</b> so autonomous agents act under auditable rules.</li></ul></div>
+  <div class="proj"><h3>LeadEngine</h3><div class="meta">Autonomous lead-intelligence SaaS · Node.js, data pipelines, voice AI</div>
+    <ul><li>Web crawling/scraping, lead scoring, B2B outbound signals, a CRM funnel, and a <b>voice agent that places outbound calls and qualifies leads.</b></li></ul></div>
+  <div class="proj"><h3>Mesh · JewelryOS · Ace Pro</h3><div class="meta">keyless idle-compute→income engine · generative design-to-CAD/STL pipeline · storage-intelligence utility</div>
+    <ul><li>Public: <a href="https://github.com/sstiempro/mesh" style="color:var(--sky)">github.com/sstiempro/mesh</a> · jobhunt-engine · portfolio.</li></ul></div>
+  <div class="proj"><h3>SSTIEM (sstiem.com) — Founder</h3>
+    <ul><li>AI dev studio &amp; systems lab. Shipped 20+ live client sites and full-stack platforms (CRM, dashboards, scheduling, payments, WebGL marketing sites); engagements scoped roughly $3k–$120k.</li></ul></div>
+
+  <h2>Experience</h2>
+  <div class="exp">
+    <div class="row"><b>Founder &amp; Principal Engineer — SSTIEM (sstiem.com)</b><span class="yr">2023 – Present</span></div>
+    <ul><li>Founded and operate an AI-systems company; designed, built, and shipped a portfolio of production platforms (quant research, lead-intelligence, agent orchestration) plus client web/dashboard work — solo, end to end.</li></ul>
+    <div class="row"><b>Sales Engineer / Independent Consultant — BAM AG Solutions</b><span class="yr">2014 – 2017</span></div>
+    <ul><li>Owned technical sales relationships; analyzed sales trends and built reporting for national accounts. <em>(Transferable to AI solutions- / sales-engineering roles.)</em></li></ul>
+  </div>
+
+  <h2>Education &amp; Self-Directed Learning</h2>
+  <ul>
+    <li><b>Self-taught software &amp; AI engineer</b> — 3+ years building production systems daily; ~1,600 documented AI-collaborative build sessions across distributed systems, AI agents, quantitative research, and full-stack/WebGL.</li>
+    <li>Trade school: Geology / Mineralogy · Washington State GED.</li>
+  </ul>
+</div>
+</body>
+</html>
