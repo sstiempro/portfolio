@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services — Thomas Tyler Hill / SSTIEM</title>
+<meta name="description" content="AI software, workflows, dashboards, agent orchestration, automations, and award-winning web — built end to end for businesses, mom-and-pop to enterprise." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#071111;--panel:#0d1a1a;--panel-hi:#0f1f1f;--line:#1f3636;--text:#FAF7F1;--muted:#9fb6b6;--faint:#6f8c8c;--copper:#BC7740;--amber:#F5BA77;--sky:#8AC3DF;--grad:linear-gradient(120deg,#BC7740,#F5BA77);--max:1080px;--radius:16px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:-.01em}
+  a{color:var(--sky);text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(7,17,17,.7);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:22px}
+  .brand .dot{color:var(--copper)}
+  .nav-links a{color:var(--muted);font-size:14.5px;margin-left:22px}
+  .nav-links a:hover{color:var(--text)}
+  .pill{padding:9px 17px;border-radius:999px;background:var(--grad);color:#1a0f06 !important;font-weight:600}
+  header.hero{padding:80px 0 50px}
+  .eyebrow{display:inline-block;color:var(--amber);font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);padding:6px 14px;border-radius:999px;background:rgba(245,186,119,.06)}
+  h1{font-size:clamp(40px,7vw,68px);line-height:1;margin:20px 0 14px;font-weight:700}
+  .lede{color:var(--muted);max-width:680px;font-size:18px}
+  .lede b{color:var(--text)}
+  section{padding:40px 0}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,var(--panel-hi),var(--panel));padding:26px;display:flex;flex-direction:column}
+  .card .cat{color:var(--amber);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .card h3{font-size:24px;margin:8px 0 4px;font-weight:600}
+  .card .price{font-family:"Cormorant Garamond",serif;color:var(--amber);font-size:22px;font-weight:700;margin:2px 0 12px}
+  .card p{color:var(--muted);font-size:14.5px;margin-bottom:12px}
+  .card ul{list-style:none;margin:0 0 6px}
+  .card li{color:var(--muted);font-size:13.5px;padding-left:16px;position:relative;margin-bottom:5px}
+  .card li::before{content:"▹";position:absolute;left:0;color:var(--copper)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+  .step{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:18px}
+  .step b{font-family:"Cormorant Garamond",serif;color:var(--amber);font-size:26px;display:block;line-height:1}
+  .step h4{font-size:15px;margin:8px 0 4px;color:var(--text);font-weight:600}
+  .step p{color:var(--muted);font-size:13px}
+  .shead{margin-bottom:22px;max-width:680px}
+  .shead .tag{color:var(--amber);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  h2{font-size:clamp(28px,4.4vw,42px);margin:8px 0 10px;font-weight:700}
+  .shead p{color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--text)}
+  .btn.primary{background:var(--grad);color:#1a0f06;border-color:transparent}
+  .cta-big{text-align:center;border:1px solid var(--line);border-radius:24px;padding:56px 28px;background:radial-gradient(700px 300px at 50% -20%,rgba(245,186,119,.10),transparent 70%),var(--panel);margin:30px 0}
+  .cta-big p{color:var(--muted);max-width:540px;margin:6px auto 24px}
+  footer{padding:40px 0 60px;border-top:1px solid var(--line);margin-top:50px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--faint);font-size:13.5px}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in">
+  <div class="brand">Thomas Tyler Hill<span class="dot">.</span></div>
+  <div class="nav-links">
+    <a href="index.html">Portfolio</a>
+    <a href="resume.html">Résumé</a>
+    <a class="pill" href="mailto:thomas@sstiem.com?subject=Project%20inquiry%20%E2%80%94%20SSTIEM">Start a project</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">SSTIEM · Work With Me</span>
+  <h1>I build the system your <span class="grad-text">business</span> has been wishing for.</h1>
+  <p class="lede">AI software, workflows, dashboards, agent orchestration, automations, and award-winning web — designed, built, and shipped end to end by one person who's done it for himself and for clients. <b>Productized so you can start without a custom quote.</b> Mom-and-pop to enterprise.</p>
+</div></header>
+
+<section><div class="wrap">
+  <div class="grid">
+
+    <div class="card">
+      <div class="cat">For small business · fastest win</div>
+      <h3>AI Workflow Sprint</h3>
+      <div class="price">from $1.5k</div>
+      <p>Pick the one task that eats your week. I automate it end to end so it just runs.</p>
+      <ul><li>Intake, scheduling, follow-up, content, or reporting</li><li>Wired into the tools you already use</li><li>Working in days, not months</li></ul>
+    </div>
+
+    <div class="card">
+      <div class="cat">For SMB &amp; creators</div>
+      <h3>Marketing &amp; Social Workflow</h3>
+      <div class="price">from $2k <span style="font-size:13px;color:var(--faint)">+ retainer</span></div>
+      <p>The marketing work you don't want to do — handled by a system, with you in approval control.</p>
+      <ul><li>Content + social pipeline, done-for-you</li><li>A dashboard so you can see it working</li><li>You approve; nothing posts without you</li></ul>
+    </div>
+
+    <div class="card">
+      <div class="cat">For growing teams</div>
+      <h3>Custom Dashboard / Internal Tool</h3>
+      <div class="price">from $6k</div>
+      <p>The single screen your team keeps asking for, built on your real data.</p>
+      <ul><li>Full-stack app or dashboard</li><li>Auth, roles, real-time data</li><li>Designed to actually get used</li></ul>
+    </div>
+
+    <div class="card">
+      <div class="cat">For scaling business</div>
+      <h3>AI System &amp; Agent Orchestration</h3>
+      <div class="price">from $15k</div>
+      <p>A custom AI system that runs the work — agents, automations, integrations as one "OS."</p>
+      <ul><li>Multi-agent orchestration with governance</li><li>Integrations across your stack</li><li>Approval + audit built in</li></ul>
+    </div>
+
+    <div class="card">
+      <div class="cat">For enterprise</div>
+      <h3>Enterprise AI Operating System</h3>
+      <div class="price">from $50k</div>
+      <p>The full SSTIEM treatment — the operating layer that ties your tools, data, and teams together.</p>
+      <ul><li>Orchestration + governance + dashboards</li><li>Deep integrations</li><li>Built to be operated, not just demoed</li></ul>
+    </div>
+
+    <div class="card">
+      <div class="cat">For brands who want to stand out</div>
+      <h3>Premium / Award-tier Web</h3>
+      <div class="price">from $8k</div>
+      <p>My signature immersive WebGL site — the web presence people remember.</p>
+      <ul><li>Senior design + art direction</li><li>WebGL / Three.js, built to perform</li><li>Deployed to the edge, near-zero maintenance</li></ul>
+    </div>
+
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead"><div class="tag">How it works</div><h2>Simple, honest, fast</h2></div>
+  <div class="steps">
+    <div class="step"><b>1</b><h4>Talk</h4><p>A short call. I learn the real problem — no jargon.</p></div>
+    <div class="step"><b>2</b><h4>Scope</h4><p>A fixed, productized scope + price. You know exactly what you get.</p></div>
+    <div class="step"><b>3</b><h4>Build</h4><p>I design and ship it, end to end, with you in the loop.</p></div>
+    <div class="step"><b>4</b><h4>Run</h4><p>It works. Optional retainer to keep improving it.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead"><div class="tag">Why me</div><h2>One builder, full spectrum</h2></div>
+  <p style="color:var(--muted);max-width:760px;font-size:16.5px">Most shops hand you off between a designer, a developer, and an "AI consultant." I'm all three. Three years and thousands of hours building production systems — solo — means you get senior design, real engineering, and AI that's actually wired in, from one person who owns the outcome. And I build honestly: I'd rather kill a bad idea with a real test than ship something that only looks good in a demo.</p>
+</div></section>
+
+<div class="wrap"><div class="cta-big">
+  <h2>Let's build something</h2>
+  <p>Tell me the problem. I'll tell you the smallest system that fixes it — and what it costs.</p>
+  <a class="btn primary" href="mailto:thomas@sstiem.com?subject=Project%20inquiry%20%E2%80%94%20SSTIEM">Start a project →</a>
+</div></div>
+
+<footer class="wrap">
+  <div>© <span id="yr"></span> Thomas Tyler Hill · SSTIEM · Austin, TX</div>
+  <div><a href="index.html">Portfolio</a> · <a href="mailto:thomas@sstiem.com">thomas@sstiem.com</a></div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
